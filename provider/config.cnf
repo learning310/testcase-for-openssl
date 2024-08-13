@@ -1,0 +1,13 @@
+openssl_conf = openssl_init
+
+[openssl_init]
+providers = provider_sect
+
+[provider_sect]
+core_params = core_params_sect
+
+[core_params_sect]
+identity = core_params
+activate = 1
+
+something = "This is something"
