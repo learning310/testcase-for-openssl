@@ -13,7 +13,8 @@ int main() {
         return 1;
     }
 
-    if (1 != EVP_DigestInit_ex(mdctx, EVP_sha256(), NULL)) {
+    EVP_MD *md = EVP_MD_fetch(NULL, "SHA-256", NULL);
+    if (1 != EVP_DigestInit_ex(mdctx, md, NULL)){
         fprintf(stderr, "EVP_DigestInit_ex failed\n");
         EVP_MD_CTX_free(mdctx);
         return 1;
